@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|______ |    | ______|------+------+------+------+------+------|
  * |______| UNDO |  CUT | COPY | PASTE|______|-------|    |-------| HOME | PGDN | PGUP |  END |______|______|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |______|______|______|______| /______ /       \______\  |______|   =  |LSTRT | LEND |
+ *            |______|______|______|______| / Bspc /        \ Bspc \  |______|   =  |LSTRT | LEND |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT(
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS, _______, _______, _______, _______, _______,                    _______, KC_PRVWD, _______, KC_NXTWD, KC_PSCR, _______,
     KC_NUM, _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
     _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______,  _______,  KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
-                      _______, _______, _______, _______, _______,  _______, _______, KC_EQL, KC_LSTRT, KC_LEND
+                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, KC_EQL, KC_LSTRT, KC_LEND
 ),
 
 /*
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------| ______|    | ______|------+------+------+------+------+------|
  * |______| UNDO |  CUT | COPY | PASTE|______|-------|    |-------| HOME | PGDN | PGUP |  END |______|______|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |______|______|______|______| /______ /       \______\  |______|   =  |LSTRT | LEND |
+ *            |______|______|______|______| / Bspc /        \ Bspc \  |______|   =  |LSTRT | LEND |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT(
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                     KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
     _______, _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
     _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______,  _______,  KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
-                      _______, _______, _______, _______, _______,  _______, _______, KC_EQL, KC_LSTRT, KC_LEND
+                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, KC_EQL, KC_LSTRT, KC_LEND
 ),
 
 /*
@@ -390,7 +390,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_LEND:
             process_nav_key(keycode, record);
             return false;
+        default:
+            return true;
     }
-
-    return true;
 }

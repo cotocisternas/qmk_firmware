@@ -7,6 +7,9 @@
 #define TRI_LAYER_UPPER_LAYER 2
 #define TRI_LAYER_ADJUST_LAYER 3
 
+// Flip the encoders so they turn the correct direction for the OS
+#define ENCODER_DIRECTION_FLIP
+
 // Forces the split code to explicitly detect the USB connection state
 #define SPLIT_USB_DETECT
 

@@ -118,7 +118,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         switch (layer) {
             case _LOWER:
             case _RAISE:
-                tap_code(clockwise ? KC_DOWN : KC_UP);
+                tap_code(clockwise ?  KC_UP : KC_DOWN);
                 break;
             case _ADJUST:
                 if (clockwise) {
@@ -128,14 +128,14 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 }
                 break;
             default: // QWERTY
-                tap_code(clockwise ? KC_VOLD : KC_VOLU);
+                tap_code(clockwise ?  KC_VOLU : KC_VOLD);
                 break;
         }
     } else {
         switch (layer) {
             case _LOWER:
             case _RAISE:
-                tap_code(clockwise ? MS_WHLD : MS_WHLU);
+                tap_code(clockwise ? MS_WHLU : MS_WHLD);
                 break;
             case _ADJUST:
                 if (clockwise) {
@@ -145,7 +145,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 }
                 break;
             default: // QWERTY
-                tap_code(clockwise ? KC_MPRV : KC_MNXT);
+                tap_code(clockwise ? KC_MNXT : KC_MPRV);
                 break;
         }
     }

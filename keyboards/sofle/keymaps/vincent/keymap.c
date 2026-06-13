@@ -16,23 +16,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY (Layer 0)
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |  ESC |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
+ * | ESC` |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |  TAB |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |   \  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |   '  |
+ * | LSFT |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |   '  |
  * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * | LSFT |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | Entr |
+ * | CTRL |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | Entr |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | CTRL | MOD4 | LALT |LOWER | / Space /       \ Space\  |RAISE |   -  |  [   |   ]  |
+ *            | MOD4 | LALT |RAISE |LOWER | / Space /       \ Space\ |   -  |   =  |  [   |   ]  |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_QWERTY] = LAYOUT(
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    QK_GESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-    KC_GRV,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,  KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-                      KC_LCTL, KC_LGUI, KC_LALT, TL_LOWR, KC_SPC, KC_SPC,  TL_UPPR, KC_MINS, KC_LBRC, KC_RBRC
+    KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,  KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+                      KC_LGUI, KC_LALT, TL_UPPR, TL_LOWR, KC_SPC, KC_SPC,  KC_MINS, KC_EQL, KC_LBRC, KC_RBRC
 ),
 
 /*
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|______ |    | ______|------+------+------+------+------+------|
  * |______| UNDO |  CUT | COPY | PASTE|______|-------|    |-------| HOME | PGDN | PGUP |  END |______|______|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |______|______|______|______| / Bspc /        \ Bspc \  |______|   =  |LSTRT | LEND |
+ *            |______|______|______|______| / Bspc /        \ Bspc \  |   -  |   =  |LSTRT | LEND |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT(
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS, _______, _______, _______, _______, _______,                    _______, KC_PRVWD, _______, KC_NXTWD, KC_PSCR, _______,
     KC_NUM, _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
     _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______,  _______,  KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
-                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, KC_EQL, KC_LSTRT, KC_LEND
+                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, _______, KC_LSTRT, KC_LEND
 ),
 
 /*
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                     KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
     _______, _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
     _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______,  _______,  KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
-                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, KC_EQL, KC_LSTRT, KC_LEND
+                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, _______, KC_LSTRT, KC_LEND
 ),
 
 /*
@@ -313,7 +313,7 @@ static void render_left_oled(void) {
     led_t led_state = host_keyboard_led_state();
     render_pixel_line_P(12, PSTR("LOCKS"), false);
     render_pixel_line_P(13, PSTR(" cap "), led_state.caps_lock);
-    render_pixel_line_P(14, PSTR(" num  "), led_state.num_lock);
+    render_pixel_line_P(14, PSTR(" num "), led_state.num_lock);
 }
 
 static void render_right_oled(void) {

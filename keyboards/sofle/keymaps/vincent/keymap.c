@@ -16,45 +16,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * QWERTY (Layer 0)
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC` |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | Bspc |
+ * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |   -  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  Tab |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |   \  |
+ * |  ESC |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |   \  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Shft |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |   '  |
+ * | Tab  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |   '  |
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
- * | Ctrl |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | Entr |
+ * | Sft  |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | Entr |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | GUI  | Alt  | Uppr | Lowr | / Space /       \ Space\ |   -  |   =  |  [   |   ]  |
+ *            | GUI  | Alt  | Uppr | Lowr | / Bspc  /       \ Space\ | Uppr | PgUp | PgDwn | Del |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_QWERTY] = LAYOUT(
-    QK_GESC, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-    KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE, KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-                      KC_LGUI, KC_LALT, TL_UPPR, TL_LOWR, KC_SPC,  KC_SPC,  KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
+    KC_GRV, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
+    KC_TAB, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE, KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+                      KC_LCTL, KC_LGUI, KC_LALT, TL_LOWR, KC_BSPC,  KC_SPC,  TL_UPPR, KC_PGDN,  KC_PGUP, KC_DEL
 ),
 
 /*
  * LOWER (Layer 1) — Navigation
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |   =  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Caps |      |      |      |      |      |                    |      | PrWd |      | NxWd | PScr |      |
+ * |      |      |      |      |      |      |                    |      | PrWd |      | NxWd | PScr |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Nums |      |      |      |      |      |-------.    ,-------| Left | Down |  Up  | Rght |      |      |
+ * | Caps |      |      |      |      |      |-------.    ,-------| Left | Down |  Up  | Rght |  [   |   ]  |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      | Undo |  Cut | Copy | Pste |      |-------|    |-------| Home | PgDn | PgUp |  End |      |      |
+ * |      | Undo |  Cut | Copy | Pste |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      |      | / Bspc  /       \ Bspc  \ |      |      | LStr | LEnd |
+ *            |      |      |      |      | /      /        \      \ |      | Home  | End | Ins  |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_LOWER] = LAYOUT(
-    _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, _______,
-    KC_CAPS, _______, _______, _______, _______, _______,                    _______, KC_PRVWD, _______, KC_NXTWD, KC_PSCR, _______,
-    KC_NUM,  _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
-    _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
-                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, _______, KC_LSTRT, KC_LEND
+    _______, _______, _______, _______, _______, _______,                    _______, _______, _______, _______, _______, KC_EQL,
+    _______, _______, _______, _______, _______, _______,                    _______, KC_PRVWD, _______, KC_NXTWD, KC_PSCR, _______,
+    KC_CAPS,  _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
+    _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+                      _______, _______, _______, _______, _______,  _______, _______, KC_LSTRT, KC_LEND, KC_INS
 ),
 
 /*
@@ -66,17 +66,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------.    ,-------| Left | Down |  Up  | Rght |  [   |   ]  |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      | Undo |  Cut | Copy | Pste |      |-------|    |-------| Home | PgDn | PgUp |  End |      |      |
+ * |      | Undo |  Cut | Copy | Pste |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      |      | / Bspc  /       \ Bspc  \ |      |      | LStr | LEnd |
+ *            |      |      |      |      | /      /        \      \ |      | Home  | End | Ins  |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_RAISE] = LAYOUT(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
     KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,                     KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,
     _______, _______, _______, _______, _______, _______,                    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_LBRC, KC_RBRC,
-    _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
-                      _______, _______, _______, _______, KC_BSPC,  KC_BSPC, _______, _______, KC_LSTRT, KC_LEND
+    _______, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+                      _______, _______, _______, _______, _______,  _______, _______, KC_LSTRT, KC_LEND, KC_INS
 ),
 
 /*
@@ -116,8 +116,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     if (is_left_enc) {
         switch (layer) {
             case _LOWER:
+                tap_code(clockwise ?  MS_WHLR : MS_WHLL);
+                break;
             case _RAISE:
-                tap_code(clockwise ?  KC_UP : KC_DOWN);
+                tap_code(clockwise ? KC_RIGHT : KC_LEFT);
                 break;
             case _ADJUST:
                 if (clockwise) {
@@ -133,8 +135,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else {
         switch (layer) {
             case _LOWER:
+                tap_code(clockwise ?  MS_WHLU : MS_WHLD);
+                break;
             case _RAISE:
-                tap_code(clockwise ? MS_WHLU : MS_WHLD);
+                tap_code(clockwise ? KC_UP : KC_DOWN);
                 break;
             case _ADJUST:
                 if (clockwise) {
@@ -264,55 +268,67 @@ static void render_pixel_line_P(uint8_t line, const char *text, bool invert) {
     render_pixel_text_P(1, line * 8, text, invert);
 }
 
-static void render_layer_name(uint8_t layer) {
+static void render_layer_name(uint8_t line, uint8_t layer) {
     switch (layer) {
         case _QWERTY:
-            render_pixel_line_P(1, PSTR("qwrty"), false);
+            render_pixel_line_P(line, PSTR("qwrty"), false);
             break;
         case _LOWER:
-            render_pixel_line_P(1, PSTR("nav  "), false);
+            render_pixel_line_P(line, PSTR(" lwr "), false);
             break;
         case _RAISE:
-            render_pixel_line_P(1, PSTR("func "), false);
+            render_pixel_line_P(line, PSTR(" rse "), false);
             break;
         case _ADJUST:
-            render_pixel_line_P(1, PSTR("adjst"), false);
+            render_pixel_line_P(line, PSTR(" adj "), false);
             break;
         default:
-            render_pixel_line_P(1, PSTR("unknw"), false);
+            render_pixel_line_P(line, PSTR("unknw"), false);
             break;
     }
 }
 
-static void render_layer_block(uint8_t layer) {
-    render_pixel_line_P(0, PSTR("LAYER"), false);
-    render_layer_name(layer);
-    render_pixel_line_P(2, PSTR("     "), false);
+static void render_layer_block(uint8_t line, uint8_t layer) {
+    render_pixel_line_P(line, PSTR("LAYER"), false);
+    render_layer_name(line + 1, layer);
+    render_pixel_line_P(line + 2, PSTR("     "), false);
+}
+
+static void render_os_mode(uint8_t line, bool swap) {
+    render_pixel_line_P(line, PSTR(" OS  "), false);
+    render_pixel_line_P(line + 1, swap ? PSTR(" mac ") : PSTR("linux"), false);
+    render_pixel_line_P(line + 2, PSTR("     "), false);
+}
+
+static void render_modifiers(uint8_t line, uint8_t mods) {
+    render_pixel_line_P(line, PSTR("MODS "), false);
+    render_pixel_line_P(line + 1, PSTR(" sft "), (mods & MOD_MASK_SHIFT) != 0);
+    render_pixel_line_P(line + 2, PSTR(" ctl "), (mods & MOD_MASK_CTRL) != 0);
+    render_pixel_line_P(line + 3, PSTR(" atl "), (mods & MOD_MASK_ALT) != 0);
+    render_pixel_line_P(line + 4, PSTR(" mod "), (mods & MOD_MASK_GUI) != 0);
+    render_pixel_line_P(line + 5, PSTR("     "), false);
+}
+
+static void render_locks(uint8_t line, bool caps, bool num) {
+    render_pixel_line_P(line, PSTR("LOCKS"), false);
+    render_pixel_line_P(line + 1, PSTR(" cap "), caps);
+    render_pixel_line_P(line + 2, PSTR(" num "), num);
 }
 
 static void render_left_oled(void) {
     // -- Layer (lines 0-2) --
-    render_layer_block(get_highest_layer(layer_state));
+    render_layer_block(0, get_highest_layer(layer_state));
 
     // -- OS mode (lines 3-5) --
-    render_pixel_line_P(3, PSTR(" OS  "), false);
-    render_pixel_line_P(4, keymap_config.swap_lctl_lgui ? PSTR(" mac ") : PSTR("linux"), false);
-    render_pixel_line_P(5, PSTR("     "), false);
+    render_os_mode(3, keymap_config.swap_lalt_lgui);
 
     // -- Modifier keys (lines 6-11): inverted text = key is held --
-    uint8_t mods = get_mods();
-    render_pixel_line_P(6, PSTR("MODS "), false);
-    render_pixel_line_P(7, PSTR(" sft "), (mods & MOD_MASK_SHIFT) != 0);
-    render_pixel_line_P(8, PSTR(" ctl "), (mods & MOD_MASK_CTRL) != 0);
-    render_pixel_line_P(9, PSTR(" atl "), (mods & MOD_MASK_ALT) != 0);
-    render_pixel_line_P(10, PSTR(" mod "), (mods & MOD_MASK_GUI) != 0);
-    render_pixel_line_P(11, PSTR("     "), false);
+    render_modifiers(6, get_mods());
 
-    // -- Locks (lines 12-13): inverted text = lock is on --
+    // -- Locks (lines 12-14): inverted text = lock is on --
     led_t led_state = host_keyboard_led_state();
-    render_pixel_line_P(12, PSTR("LOCKS"), false);
-    render_pixel_line_P(13, PSTR(" cap "), led_state.caps_lock);
-    render_pixel_line_P(14, PSTR(" num "), led_state.num_lock);
+    render_locks(12, led_state.caps_lock, led_state.num_lock);
+    render_pixel_line_P(15, PSTR("1234567890"), false);
 }
 
 static void render_right_oled(void) {
@@ -350,7 +366,7 @@ static uint8_t nav_key_index(uint16_t keycode) {
 }
 
 static uint16_t nav_chord_for_keycode(uint16_t keycode) {
-    bool is_mac = keymap_config.swap_lctl_lgui;
+    bool is_mac = keymap_config.swap_lalt_lgui;
 
     switch (keycode) {
         case KC_PRVWD:
